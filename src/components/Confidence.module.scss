@@ -1,0 +1,43 @@
+.confidence {
+  max-width: 35ch;
+  padding: 0;
+  background-color: var(--secondary-color);
+  border: solid 0.25em var(--on-primary);
+  border-radius: 0.3em;
+  box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.3);
+  .header, .footer {
+	font-size: 1.1em;
+	font-weight: bold;
+	text-align: center;
+	color: var(--secondary-color);
+	background-color: var(--on-primary);
+	margin: 0;
+	padding: 0.6em 1em;
+  }
+  .footer {
+	font-size: 0.9em;
+  }
+  .confs {
+	.frame {
+	  margin: 0 1em;
+	  display: flex;
+	  align-items: center;
+	  .language {
+		display: inline-block;
+		font-weight: bold;
+		width: 30%;
+	  }
+	  .bar {
+		display: inline-block;
+		height: 1ch;
+		width: 65%;
+		border: solid 0.25em var(--on-primary);
+		border-radius: 1em;
+		.progress {
+		  height: 100%;
+		  background-color: var(--on-primary);
+		}
+	  }
+	}
+  }
+}
