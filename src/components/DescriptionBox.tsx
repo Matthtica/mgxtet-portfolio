@@ -1,11 +1,11 @@
 import styles from './DescriptionBox.module.scss';
 
 interface DescriptionProp {
-    description: string
+    description: JSX.Element
 }
 
 export default function DescriptionBox(prop: DescriptionProp) {
     return <div className={styles.description}>
-        <p>{prop.description}</p>
+        {prop.description}
     </div>;
 }

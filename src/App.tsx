@@ -18,20 +18,27 @@ export default function App() {
         "react": { name: "ReactJS", level: 70 },
         "svelte": { name: "Svelte", level: 60 },
     };
-    const about_languages =
-        "My journey in programming just get started with HTML, CSS " +
-        "and Javascript but I didn't enjoy working with javascript itself " +
-        "and self taught other programming languages. I " +
-        "mostly enjoy writing statically typed languages " +
-        "such as C++ and Typescript.";
+    const about_languages = <p>My journey in programming just get started with HTML, CSS
+        and Javascript but I didn't enjoy working with javascript itself
+        and self taught other programming languages. I
+        mostly enjoy writing statically typed languages
+        such as C++ and Kotlin. Also I like working with typescript.</p>;
 
-    const about_techstack = "I have some knowledge with React, Solid and Svelte. " +
-        "Matter of facts, I wrote this website using reactjs, css module and scss";
+    const about_techstack = <p>I have some knowledge with React, Solid and Svelte.
+        Matter of facts, I wrote this website using reactjs, css module and scss</p>;
+
+    const type_of_person = <p>I am the type of person, that if you ask me a question
+        and I don't know the answer. I am gonna tell you that I don't know.
+        But I bet you what? I know how to find the answer and I will find the answer.</p>;
+
+    const leetcode = <p>I was spending more time on solving problem rather than
+        frameworks. So in case of problem solving skill here is my <a href="https://leetcode.com/Karlicin/" target="_blank" >leetcode profile and scores.</a></p>;
 
     return (
         <div className="main-page">
             <Nav />
             <div className="content">
+                <DescriptionBox description={type_of_person} />
                 <Confidence
                     header="Confidence on writing in each programming languaue"
                     data={confidences}
@@ -44,6 +51,7 @@ export default function App() {
                     data={techstacks}
                     footer="The higher the better"
                 />
+                <DescriptionBox description={leetcode} />
             </div>
             <Footer />
         </div >

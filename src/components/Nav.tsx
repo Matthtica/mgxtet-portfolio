@@ -17,7 +17,6 @@ export default function Nav() {
         [retro.name]: retro,
         [palenight.name]: palenight,
     }
-    const nav_items = ["skills", "address", "email", "about"];
     const [themeName, setThemeName] = useState(retro.name);
 
     useEffect(() => {
@@ -38,7 +37,9 @@ export default function Nav() {
             </svg>
         </div>
         <ul>
-            {nav_items.map((title: string) => <li className="nav-item">{title}</li>)}
+            <li className="nav-item">
+                <a href="#information">address</a>
+            </li>
             <li className="nav-item dropdown">
                 <div className="dropdown-btn">{themeName}</div>
                 <ul className="dropdown-menu">

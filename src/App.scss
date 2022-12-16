@@ -32,7 +32,7 @@
 .navbar {
   display: flex;
   position: sticky;
-  max-height: 100px;
+  height: 5em;
   top: 0;
   justify-content: space-between;
   align-items: center;
@@ -55,6 +55,10 @@
 	transition: var(--transition-du) ease-in;
 	transform: translate(-6%, -6%);
 	box-shadow: 6px 6px 0 0 var(--on-primary);
+	a {
+	  text-decoration: none;
+	  color: var(--on-primary);
+	}
 	i {
 	  transition-duration: 2s;
 	}
@@ -64,7 +68,11 @@
 	color: var(--secondary-color);
 	transform: translate(0, 0);
 	box-shadow: none;
+	a {
+	  color: var(--secondary-color);
+	}
   }
+
   .nav-item:last-child:hover {
 	.dropdown-menu {
 	  display: block;
@@ -74,11 +82,12 @@
 
 .banner-cont {
   position: relative;
-  height: 5em;
+  height: 100%;
   width: 5em;
   margin-left: 3em;
   svg {
 	position: absolute;
+	top: 0;
 	height: 123%;
 	width: 100%;
     #banner {
@@ -131,11 +140,11 @@
 .content {
   max-width: 100ch;
   margin: auto;
-  height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2em;
   padding: 2em;
   align-items: center;
   justify-items: center;
+  transition: ease-out 0.5s;
 }
