@@ -22,3 +22,12 @@
   max-width: 90%;
 }
 
+@media (orientation: portrait) {
+  .description:first-child {
+	grid-column: 1 / 2;
+  }
+  .description:last-child {
+	grid-column: 1 / 2;
+  }
+}
+

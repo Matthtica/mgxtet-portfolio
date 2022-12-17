@@ -20,6 +20,7 @@
   --inner-gap: 20px;
   --border-width: 3px;
   --transition-du: 0.2s;
+  $mobile-width: 60ch;
 }
 
 .main-page {
@@ -147,4 +148,13 @@
   align-items: center;
   justify-items: center;
   transition: ease-out 0.5s;
+}
+
+@media (orientation: portrait) {
+  .content{
+	grid-template-columns: 1fr;
+  }
+  .nav-item:first-child {
+	display: none;
+  }
 }

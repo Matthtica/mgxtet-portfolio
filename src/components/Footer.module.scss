@@ -1,10 +1,11 @@
 .information {
   width: 100%;
-  height: 100px;
   background-color: var(--on-primary);
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0.5em 0;
+  gap: 1em;
   color: var(--secondary-color);
   .subdiv {
 	margin: auto;
@@ -61,3 +62,8 @@
   display: block;
 }
 
+@media (max-width: 70ch) {
+  .information {
+	flex-direction: column;
+  }
+}
