@@ -19,12 +19,21 @@ export default function Nav() {
     }
     const [themeName, setThemeName] = useState(retro.name);
 
+    const onClickThemeMenu = () => {
+        $(".dropdown-menu").css({
+            "display": "block",
+        });
+    }
+
     useEffect(() => {
         const selected = themes[themeName];
         $(":root").css({
             "--primary-color": selected.primary,
             "--on-primary": selected.onPrimary,
             "--secondary-color": selected.secondary
+        });
+        $(".dropdown-menu").css({
+            "display": "none",
         });
     }, [themeName]);
 
@@ -40,7 +49,7 @@ export default function Nav() {
             <li className="nav-item">
                 <a href="#information">address</a>
             </li>
-            <li className="nav-item dropdown">
+            <li className="nav-item dropdown" onClick={onClickThemeMenu}>
                 <div className="dropdown-btn">{themeName}</div>
                 <ul className="dropdown-menu">
                     {Object.keys(themes).map((name: string) => <li className="dropdown-item" onClick={() => setThemeName(name)}>{name}</li>)}
