@@ -25,7 +25,7 @@ export default function App() {
         such as C++ and Kotlin. Also I like working with typescript.</p>;
 
     const about_techstack = <p>I have some knowledge with React, Solid and Svelte.
-        Matter of facts, I wrote this website using reactjs, css module and scss</p>;
+        Matter of facts, I wrote this website using ReactJS, css module, scss and a little bit of JQuery.</p>;
 
     const type_of_person = <p>I am the type of person, that if you ask me a question
         and I don't know the answer. I am gonna tell you that I don't know.

@@ -12,10 +12,12 @@ export default function Nav() {
     const retro: Theme = { name: "Retro", primary: "#d5c4a1", onPrimary: "#1d2021", secondary: "#83a698" /*"#928374"*/ };
     const gruvbox: Theme = { name: "Gruvbox", primary: "#cc241d", onPrimary: "#1d2021", secondary: "#ebdbb2" };
     const palenight: Theme = { name: "Palenight", primary: "#c792ea", onPrimary: "#202331", secondary: "#82aaff" };
+    const paper: Theme = { name: "Paper", primary: "#d0cab7", onPrimary: "#2a3853", secondary: "#d0cab7" };
     const themes = {
         [gruvbox.name]: gruvbox,
         [retro.name]: retro,
         [palenight.name]: palenight,
+        [paper.name]: paper,
     }
     const [themeName, setThemeName] = useState(retro.name);
 

@@ -8,12 +8,14 @@
   font-weight: bold;
   text-align: justify;
   box-shadow: 0.5em 0.5em 0 0 var(--on-primary);
+  color: var(--on-primary);
   a {
-	color: var(--secondary-color);
+	color: var(--on-primary);
 	padding: 0 0.1em;
   }
   a:hover {
 	background-color: var(--on-primary);
+	color: var(--primary-color);
   }
 }
 
