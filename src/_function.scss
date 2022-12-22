@@ -1,0 +1,67 @@
+@use "sass:math";
+
+$d: 11px;
+
+@mixin neumorph-primary($dist) {
+  $half: math.div($dist, 2);
+  $opposite: (0 - $half);
+  background: var(--primary-color);
+  box-shadow: $half $half $dist var(--primary-darken-sha),
+			  $opposite $opposite $dist var(--primary-lighten-sha);
+}
+
+@mixin neumorph-secondary($dist) {
+  $half: math.div($dist, 2);
+  $opposite: (0 - $half);
+  background: var(--secondary-color);
+  box-shadow: $half $half $dist var(--secondary-darken-sha),
+			  $opposite $opposite $dist var(--secondary-lighten-sha);
+}
+
+@function set-text-color($color) {
+  @if (lightness($color) > 50) {
+	@return #000000;
+  } @else {
+	@return #ffffff;
+  }
+}
+
+@mixin neumorph-inset-primary($dist) {
+  $half: math.div($dist, 2);
+  $opposite: (0 - $half);
+  background: var(--primary-color);
+  box-shadow: inset $half $half $dist var(--primary-darken-sha),
+			  inset $opposite $opposite $dist var(--primary-lighten-sha);
+}
+
+@mixin neumorph-both-primary($dist) {
+  $half: math.div($dist, 2);
+  $opposite: (0 - $half);
+  background: var(--primary-color);
+  box-shadow: inset $half $half $dist var(--primary-darken-sha),
+			  inset $opposite $opposite $dist var(--primary-lighten-sha),
+			  $half $half $dist var(--primary-darken-sha),
+			  $opposite $opposite $dist var(--primary-lighten-sha);
+}
+
+@mixin neumorph-mold-primary($dist) {
+  $half: math.div($dist, 2);
+  $opposite: (0 - $half);
+  background: var(--primary-color);
+  box-shadow: inset $half $half $dist var(--primary-lighten-sha),
+			  inset $opposite $opposite $dist var(--primary-darken-sha),
+			  0 0 (2 * $dist) var(--primary-darken-sha);
+}
+
+@mixin neumorph-mold-secondary($dist) {
+  $half: math.div($dist, 2);
+  $opposite: (0 - $half);
+  background: var(--secondary-color);
+  box-shadow: inset $half $half $dist var(--secondary-lighten-sha),
+			  inset $opposite $opposite $dist var(--secondary-darken-sha),
+			  0 0 (2 * $dist) var(--secondary-darken-sha);
+}
+
+@mixin round {
+  border-radius: 100vw;
+}

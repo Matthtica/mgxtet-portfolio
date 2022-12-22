@@ -22,7 +22,7 @@ export default function Confidence(prop: ConfidenceProp) {
         <div className={styles.header}>{prop.header}</div>
         <div className={styles.confs}>
             {Object.keys(prop.data).map((lang: string) =>
-                <div className={styles.frame}>
+                <div className={styles.frame} key={lang}>
                     <p className={styles.language}>{prop.data[lang].name}</p>
                     <div className={styles.bar}>
                         <div className={`${styles.progress} ${lang}`}>

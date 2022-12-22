@@ -1,20 +1,20 @@
+@use '../function' as f;
+
 .description {
-  background-color: var(--primary-color);
   max-width: 30ch;
   padding: 0 1em;
-  border-radius: 0.2em;
-  border: solid 0.25em var(--on-primary);
   font-size: 1.1em;
   font-weight: bold;
   text-align: justify;
-  box-shadow: 0.5em 0.5em 0 0 var(--on-primary);
-  color: var(--on-primary);
+  color: var(--secondary-color);
+  @include f.neumorph-primary(f.$d);
+  border-radius: 0.4em;
   a {
-	color: var(--on-primary);
+	color: var(--secondary-color);
 	padding: 0 0.1em;
   }
   a:hover {
-	background-color: var(--on-primary);
+	background-color: var(--secondary-color);
 	color: var(--primary-color);
   }
 }
@@ -24,7 +24,7 @@
   max-width: 90%;
 }
 
-@media (orientation: portrait) {
+@media (max-width: var(--mobile-width)) {
   .description:first-child {
 	grid-column: 1 / 2;
   }

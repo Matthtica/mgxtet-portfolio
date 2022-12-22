@@ -18,8 +18,8 @@ export default function App() {
         "react": { name: "ReactJS", level: 70 },
         "svelte": { name: "Svelte", level: 60 },
     };
-    const about_languages = <p>My journey in programming just get started with HTML, CSS
-        and Javascript but I didn't enjoy working with javascript itself
+    const about_languages = <p>My journey in programming was started more than 2 years ago
+        with HTML, CSS and Javascript but I didn't enjoy working with javascript itself
         and self taught other programming languages. I
         mostly enjoy writing statically typed languages
         such as C++ and Kotlin. Also I like working with typescript.</p>;

@@ -1,18 +1,12 @@
+@use './function' as f;
+
 :root {
-  // gruvbox B&W
-  --primary-color: #d0cab7; // #d5c4a1
-  --on-primary: #282828;
-  --secondary-color: #2A3853;
-
-  // red gruvbox
-  //--primary-color: #cc241d;
-  //--on-primary: #1d2021;
-  //--secondary-color: #ebdbb2;
-
-  // palenight B&W
-  //--primary-color: #c792ea;
-  //--on-primary: #202331;
-  //--secondary-color: #82aaff;
+  --primary-color: #d0cab7;
+  --primary-darken-sha: black;
+  --primary-lighten-sha: black;
+  --secondary-color: #282828;
+  --secondary-darken-sha: cyan;
+  --secondary-lighten-sha: cyan;
 
   --inner-radius: 5px;
   --outer-radius: calc(var(--inner-radius) + 5px);
@@ -20,7 +14,7 @@
   --inner-gap: 20px;
   --border-width: 3px;
   --transition-du: 0.2s;
-  $mobile-width: 60ch;
+  --mobile-width: 60ch;
 }
 
 .main-page {
@@ -41,42 +35,22 @@
   transition-duration: var(--transition-du);
   padding: 0;
   background-color: var(--primary-color);
-  box-shadow: 0 0.2em 0.2em 0.25em rgba(0, 0, 0, 0.3);
-  border-bottom: solid 0.25em var(--on-primary);
+  @include f.neumorph-primary(f.$d);
   .nav-item {
 	display: inline-block;
-	cursor: default;
+	cursor: pointer;
 	margin: 0px 25px;
 	font-weight: bold;
 	font-variant: small-caps;
-    background-color: var(--secondary-color);
-    border: solid 0.2em var(--on-primary);
-    border-radius: 3em;
+    background-color: var(--primary-color);
+	color: var(--secondary-color);
     padding: 0.5em 1em;
-	transition: var(--transition-du) ease-in;
-	transform: translate(-6%, -6%);
-	box-shadow: 6px 6px 0 0 var(--on-primary);
 	a {
 	  text-decoration: none;
-	  color: var(--on-primary);
+	  color: var(--primary-color);
 	}
 	i {
 	  transition-duration: 2s;
-	}
-  }
-  .nav-item:hover {
-	background-color: var(--on-primary);
-	color: var(--secondary-color);
-	transform: translate(0, 0);
-	box-shadow: none;
-	a {
-	  color: var(--secondary-color);
-	}
-  }
-
-  .nav-item:last-child:hover {
-	.dropdown-menu {
-	  display: block;
 	}
   }
 }
@@ -95,7 +69,7 @@
       transition-duration: 0.3s;
       path {
 		transition-duration: 0.3s;
-        fill: var(--on-primary);
+        fill: var(--secondary-color);
       }
     }
 	#banner:hover {
@@ -109,31 +83,35 @@
 .dropdown {
   position: relative;
   .dropdown-btn {
-	background-color: transparent;
 	border: none;
 	border-radius: 3em;
+	padding: 0.5em 1em;
 	font-variant: small-caps;
 	font-weight: bold;
+	@include f.neumorph-primary(f.$d);
+	transition: ease-in-out 0.3s;
+  }
+  .dropdown-btn:hover {
+	color: var(--primary-color);
+	@include f.neumorph-mold-secondary(f.$d);
   }
   .dropdown-menu {
-	color: var(--on-primary);
+	color: var(--secondary-color);
 	position: absolute;
 	display: none;
 	right: 0;
 	top: 100%;
-	background-color: var(--secondary-color);
+	@include f.neumorph-primary(f.$d);
 	padding: 0;
-	border: solid 0.2em var(--on-primary);
 	.dropdown-item {
 	  margin: 0;
 	  box-sizing: border-box;
 	  display: block;
-	  padding: 0.5em 1em;
-	  border: solid 0.2em var(--on-primary);
+	  padding: 0.5em 1.5em;
 	}
 	.dropdown-item:hover {
-	  background-color: var(--on-primary);
-	  color: var(--secondary-color);
+	  color: var(--primary-color);
+	  @include f.neumorph-secondary(f.$d);
 	}
   }
 }
@@ -150,8 +128,8 @@
   transition: ease-out 0.5s;
 }
 
-@media (orientation: portrait) {
-  .content{
+@media (max-width: var(--mobile-width)) {
+  .content {
 	grid-template-columns: 1fr;
   }
   .nav-item:first-child {

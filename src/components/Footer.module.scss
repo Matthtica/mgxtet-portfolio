@@ -1,19 +1,21 @@
+@use '../function' as f;
+
 .information {
   width: 100%;
-  background-color: var(--on-primary);
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0.5em 0;
   gap: 1em;
-  color: var(--primary-color);
+  color: var(--secondary-color);
+  @include f.neumorph-primary(f.$d);
   .subdiv {
 	margin: auto;
   }
 }
 
 .icon {
-  fill: var(--primary-color);
+  fill: var(--secondary-color);
 }
 
 .gotos {
@@ -22,15 +24,6 @@
   padding: 0.5em 1em;
   gap: 1em 2em;
   place-items: center;
-}
-
-.al {
-  list-style-type: none;
-  a:hover {
-    .icon {
- 	  fill: var(--secondary-color);
-    }
-  }
 }
 
 .phbtn {
@@ -47,6 +40,7 @@
   bottom: 100%;
   width: 10ch;
   text-align: center;
+  color: var(--secondary-color);
   background-color: var(--primary-color);
   border-radius: 2px;
   padding: 0.2em 0.5em;
@@ -54,7 +48,16 @@
 
 .phbtn:hover {
   .icon {
-	fill: var(--secondary-color);
+	fill: white;
+  }
+}
+
+.al {
+  list-style-type: none;
+  a:hover {
+    .icon {
+ 	  fill: white;
+    }
   }
 }
 
