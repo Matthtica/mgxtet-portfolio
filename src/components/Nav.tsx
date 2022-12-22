@@ -34,7 +34,7 @@ export default function Nav() {
         "black": { primary: "#2e2e2e", secondary: "#dbdbdb" },
         "ypaper": { primary: "#d5c4a1", secondary: "#282828" },
     }
-    const [themeName, setThemeName] = useState("blue");
+    const [themeName, setThemeName] = useState("white");
 
     const onClickThemeMenu = () => {
         $(".dropdown-menu").css({
