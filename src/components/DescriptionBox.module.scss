@@ -24,7 +24,7 @@
   max-width: 90%;
 }
 
-@media (max-width: var(--mobile-width)) {
+@media (orientation: portrait) {
   .description:first-child {
 	grid-column: 1 / 2;
   }

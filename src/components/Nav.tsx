@@ -2,13 +2,6 @@ import { useEffect, useState } from "react";
 import $ from 'jquery';
 import { colorLuminance } from '../utils/utils';
 
-interface Theme {
-    name: string,
-    primary: string,
-    onPrimary: string,
-    secondary: string
-}
-
 const diff = 0.3;
 
 interface Duet {
@@ -20,20 +13,21 @@ type Color = {
     [key: string]: Duet;
 }
 
+const colors: Color = {
+    "blue": { primary: "#2a3da3", secondary: "#b8c2ff" },
+    "red": { primary: "#941c24", secondary: "#232324" },
+    "green": { primary: "#1c9428", secondary: "#7dff9d" },
+    "purple": { primary: "#582aa3", secondary: "#bc81e3" },
+    "pink": { primary: "#972aa3", secondary: "#e381bf" },
+    "cyan": { primary: "#2a99a3", secondary: "#81e1e3" },
+    "yellow": { primary: "#a6981b", secondary: "#e3e181" },
+    "orange": { primary: "#c27013", secondary: "#e3b581" },
+    "white": { primary: "#dbdbdb", secondary: "#2e2e2e" },
+    "black": { primary: "#2e2e2e", secondary: "#dbdbdb" },
+    "ypaper": { primary: "#d5c4a1", secondary: "#282828" },
+}
+
 export default function Nav() {
-    const colors: Color = {
-        "blue": { primary: "#2a3da3", secondary: "#b8c2ff" },
-        "red": { primary: "#941c24", secondary: "#232324" },
-        "green": { primary: "#1c9428", secondary: "#7dff9d" },
-        "purple": { primary: "#582aa3", secondary: "#bc81e3" },
-        "pink": { primary: "#972aa3", secondary: "#e381bf" },
-        "cyan": { primary: "#2a99a3", secondary: "#81e1e3" },
-        "yellow": { primary: "#9ba32a", secondary: "#e3e181" },
-        "orange": { primary: "#c27013", secondary: "#e3b581" },
-        "white": { primary: "#dbdbdb", secondary: "#2e2e2e" },
-        "black": { primary: "#2e2e2e", secondary: "#dbdbdb" },
-        "ypaper": { primary: "#d5c4a1", secondary: "#282828" },
-    }
     const [themeName, setThemeName] = useState("white");
 
     const onClickThemeMenu = () => {

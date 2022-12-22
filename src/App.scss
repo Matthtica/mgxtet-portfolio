@@ -14,7 +14,7 @@
   --inner-gap: 20px;
   --border-width: 3px;
   --transition-du: 0.2s;
-  --mobile-width: 60ch;
+  --mobile-width: 400px;
 }
 
 .main-page {
@@ -128,7 +128,7 @@
   transition: ease-out 0.5s;
 }
 
-@media (max-width: var(--mobile-width)) {
+@media (orientation: portrait) {
   .content {
 	grid-template-columns: 1fr;
   }
