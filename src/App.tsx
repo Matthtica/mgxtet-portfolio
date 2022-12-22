@@ -11,7 +11,7 @@ export default function App() {
         "ts": { name: "Typescript", level: 85 },
         "kt": { name: "Kotlin", level: 60 },
         "py": { name: "Python", level: 50 },
-        "scss": { name: "Scss", level: 55 },
+        "scss": { name: "Scss", level: 85 },
         "java": { name: "Java", level: 30 },
     };
     const techstacks: LanguageConfidence = {

@@ -16,13 +16,6 @@
 	margin: 0;
 	padding: 0.6em 1em;
   }
-  .header {
-	border-radius: 0.4em 0.4em 0 0;
-  }
-  .footer {
-	font-size: 0.9em;
-	border-radius: 0em 0em 0.4em 0.4em;
-  }
   .confs {
 	.frame {
 	  margin: 0 1em;
@@ -42,7 +35,7 @@
 		@include f.neumorph-both-primary(7px);
 		.progress {
 		  height: 100%;
-		  @include f.neumorph-primary(7px);
+		  background-color: var(--secondary-color);
 		  @include f.round;
 		}
 	  }
