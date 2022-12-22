@@ -62,6 +62,11 @@ $d: 11px;
 			  0 0 (2 * $dist) var(--secondary-darken-sha);
 }
 
+@mixin large-shadow-secondary {
+  background: var(--secondary-color);
+  box-shadow: 0 0 (2 * $d) 5px var(--secondary-color);
+}
+
 @mixin round {
   border-radius: 100vw;
 }

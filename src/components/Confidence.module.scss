@@ -35,7 +35,7 @@
 		@include f.neumorph-both-primary(7px);
 		.progress {
 		  height: 100%;
-		  background-color: var(--secondary-color);
+		  @include f.neumorph-primary(f.$d);
 		  @include f.round;
 		}
 	  }
