@@ -93,7 +93,7 @@
   }
   .dropdown-btn:hover {
 	color: var(--primary-color);
-	@include f.neumorph-mold-secondary(f.$d);
+	@include f.neumorph-secondary(f.$d);
   }
   .dropdown-menu {
 	color: var(--secondary-color);
