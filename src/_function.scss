@@ -1,6 +1,6 @@
 @use "sass:math";
 
-$d: 11px;
+$d: 9px;
 
 @mixin neumorph-primary($dist) {
   $half: math.div($dist, 2);

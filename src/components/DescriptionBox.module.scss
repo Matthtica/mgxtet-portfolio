@@ -1,13 +1,14 @@
 @use '../function' as f;
 
-.description {
-  max-width: 30ch;
+.body {
+  position: relative;
+  max-width: 50ch;
   padding: 0 1em;
   font-size: 1.1em;
   font-weight: bold;
   text-align: justify;
   color: var(--secondary-color);
-  @include f.neumorph-primary(f.$d);
+  @include f.neumorph-inset-primary(calc(f.$d * 0.75));
   border-radius: 0.4em;
   a {
 	color: var(--secondary-color);
@@ -17,19 +18,16 @@
 	background-color: var(--secondary-color);
 	color: var(--primary-color);
   }
-}
-
-.description:first-child, .description:last-child {
-  grid-column: 1 / 3;
-  max-width: 90%;
-}
-
-@media (orientation: portrait) {
-  .description:first-child {
-	grid-column: 1 / 2;
+  .title {
+	position: absolute;
+	padding: 0.2em 1em;
+	@include f.neumorph-primary(calc(f.$d * 0.75));
+	@include f.round;
+	transform: translate(0, -50%);
   }
-  .description:last-child {
-	grid-column: 1 / 2;
+  .description {
+	padding: 0.5em 0.2em 0.05em 0.2em;
   }
 }
+
 

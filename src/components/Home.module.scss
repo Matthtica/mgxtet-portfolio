@@ -1,0 +1,11 @@
+
+.home {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  padding: 2em;
+  align-items: center;
+  justify-content: center;
+  transition: ease-out 0.5s;
+}

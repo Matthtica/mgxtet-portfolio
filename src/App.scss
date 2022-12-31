@@ -18,118 +18,17 @@
 }
 
 .main-page {
+  position: relative;
   background-color: var(--primary-color);
   width: 100%;
-  height: 100%;
+  height: 100vh;
   padding: 0;
-}
-
-.navbar {
   display: flex;
-  position: sticky;
-  height: 5em;
-  top: 0;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 0;
-  transition-duration: var(--transition-du);
-  padding: 0;
-  background-color: var(--primary-color);
-  @include f.neumorph-primary(f.$d);
-  .nav-item {
-	display: inline-block;
-	cursor: pointer;
-	margin: 0px 25px;
-	font-weight: bold;
-	font-variant: small-caps;
-    background-color: var(--primary-color);
-	color: var(--secondary-color);
-    padding: 0.5em 1em;
-	a {
-	  text-decoration: none;
-	  color: var(--primary-color);
-	}
-	i {
-	  transition-duration: 2s;
-	}
-  }
-}
-
-.banner-cont {
-  position: relative;
-  height: 100%;
-  width: 5em;
-  margin-left: 3em;
-  svg {
-	position: absolute;
-	top: 0;
-	height: 123%;
-	width: 100%;
-    #banner {
-      transition-duration: 0.3s;
-      path {
-		transition-duration: 0.3s;
-        fill: var(--secondary-color);
-      }
-    }
-	#banner:hover {
-	  path {
-		fill: transparent;
-	  }
-	}
-  }
-}
-
-.dropdown {
-  position: relative;
-  .dropdown-btn {
-	border: none;
-	border-radius: 3em;
-	padding: 0.5em 1em;
-	font-variant: small-caps;
-	font-weight: bold;
-	@include f.neumorph-primary(f.$d);
-	transition: ease-in-out 0.3s;
-  }
-  .dropdown-btn:hover {
-	color: var(--primary-color);
-	@include f.large-shadow-secondary;
-  }
-  .dropdown-menu {
-	color: var(--secondary-color);
-	position: absolute;
-	display: none;
-	right: 0;
-	top: 100%;
-	@include f.neumorph-primary(f.$d);
-	padding: 0;
-	.dropdown-item {
-	  margin: 0;
-	  box-sizing: border-box;
-	  display: block;
-	  padding: 0.5em 1.5em;
-	}
-	.dropdown-item:hover {
-	  color: var(--primary-color);
-	  @include f.large-shadow-secondary;
-	}
-  }
+  flex-direction: column;
 }
 
 .content {
-  max-width: 100ch;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2em;
-  padding: 2em;
-  align-items: center;
-  justify-items: center;
-  transition: ease-out 0.5s;
-}
-
-@media (orientation: portrait) {
-  .content {
-	grid-template-columns: 1fr;
-  }
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
 }

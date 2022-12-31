@@ -1,0 +1,210 @@
+@use '../function' as f;
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  height: 4.5em;
+  top: 0;
+  margin-top: 0;
+  transition-duration: var(--transition-du);
+  padding: 0;
+  background-color: var(--primary-color);
+  @include f.neumorph-primary(f.$d);
+  z-index: 1;
+}
+
+.overlay {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.navi {
+  display: none;
+  position: relative;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .nbtn {
+	height: 50%;
+	aspect-ratio: 1 / 1;
+	cursor: pointer;
+	svg {
+	  margin: 0;
+	  aspect-ratio: 1 / 1;
+	  padding: 0.3em;
+	  fill: var(--secondary-color);
+	}
+  }
+  .nmenu, .hiddenNMenu {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 38vw;
+	height: 100vh;
+	transform: translateX(0);
+	transition: ease-in-out 0.4s transform;
+	@include f.neumorph-primary(f.$d);
+	margin: 0;
+	padding: 0;
+	.nitem {
+	  font-variant: small-caps;
+	  color: var(--secondary-color);
+	  font-weight: bold;
+	  padding: 1em;
+	  cursor: pointer;
+	  display: flex;
+	  align-items: center;
+	  gap: 1em;
+	  .icon {
+		fill: var(--secondary-color);
+	  }
+	}
+	.nitem:hover {
+	  color: var(--primary-color);
+	  @include f.large-shadow-secondary;
+	  .icon {
+		fill: var(--primary-color);
+	  }
+	}
+  }
+
+  .hiddenNMenu {
+	box-shadow: none;
+	transform: translateX(-100%); 
+  }
+
+}
+
+.menus {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  .navItem {
+	display: inline-block;
+	cursor: pointer;
+	width: 1fr;
+	margin: 0.5em;
+	font-weight: bold;
+	font-variant: small-caps;
+    background-color: var(--primary-color);
+	color: var(--secondary-color);
+    padding: 0.4em 1em;
+	@include f.round;
+	transition: 0.2s ease-in-out;
+	overflow: clip;
+	.layout {
+	  height: 100%;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  .icon {
+		height: 100%;
+		fill: var(--secondary-color);
+	  }
+	  div {
+		margin-left: 0.5em;
+		transition: ease-in-out 0.5s font-size;
+		font-size: 0em;
+	  }
+	}
+  }
+  .current {
+	@include f.neumorph-primary(f.$d);
+	.layout {
+	  div {
+		margin-left: 0.5em;
+		font-size: 1em;
+	  }
+	}
+  }
+  .navItem:hover {
+	@include f.neumorph-primary(f.$d);
+  }
+}
+
+.bannerCont {
+  position: relative;
+  height: 100%;
+  width: 5em;
+  margin-left: 3em;
+  svg {
+	position: absolute;
+	top: 0;
+	height: 123%;
+	width: 100%;
+    .banner {
+      transition-duration: 0.3s;
+      path {
+		transition-duration: 0.3s;
+        fill: var(--secondary-color);
+      }
+    }
+	.banner:hover {
+	  path {
+		fill: transparent;
+	  }
+	}
+  }
+}
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  margin: 0.5em;
+  font-weight: bold;
+  font-variant: small-caps;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 0.4em 1em;
+  @include f.neumorph-primary(f.$d);
+  @include f.round;
+  .dropdownMenu {
+	color: var(--secondary-color);
+	position: absolute;
+	display: none;
+	right: 0;
+	top: 100%;
+	@include f.neumorph-primary(f.$d);
+	padding: 0;
+	.dropdownItem {
+	  margin: 0;
+	  box-sizing: border-box;
+	  display: block;
+	  padding: 0.5em 1.5em;
+	}
+	.dropdownItem:hover {
+	  color: var(--primary-color);
+	  @include f.large-shadow-secondary;
+	}
+  }
+}
+
+.dropdown:hover {
+  @include f.large-shadow-secondary;
+  color: var(--primary-color);
+}
+
+@media (orientation: portrait) {
+  .menus {
+	display: none;
+  }
+  .bannerCont {
+	display: none;
+  }
+}
+
+@media (orientation: landscape) {
+  .navi {
+	display: none;
+  }
+}

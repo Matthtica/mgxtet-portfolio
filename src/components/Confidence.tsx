@@ -6,7 +6,6 @@ import { LanguageConfidence } from "../utils/constants";
 interface ConfidenceProp {
     header: string,
     data: LanguageConfidence,
-    footer: string,
 }
 
 export default function Confidence(prop: ConfidenceProp) {
@@ -31,6 +30,5 @@ export default function Confidence(prop: ConfidenceProp) {
                 </div>
             )}
         </div>
-        <div className={styles.footer}>{prop.footer}</div>
     </div>;
 }

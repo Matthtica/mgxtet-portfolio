@@ -1,18 +1,18 @@
 @use '../function' as f;
 
 .confidence {
-  max-width: 35ch;
+  width: clamp(25ch, 50ch, 100%);
   padding: 0;
   color: var(--secondary-color);
   @include f.neumorph-primary(f.$d);
   border-radius: 0.4em;
   overflow: clip;
-  .header, .footer {
+  .header {
 	font-size: 1.1em;
 	font-weight: bold;
 	text-align: center;
 	color: var(--primary-color);
-	@include f.neumorph-secondary(f.$d);
+	@include f.large-shadow-secondary;
 	margin: 0;
 	padding: 0.6em 1em;
   }
@@ -32,10 +32,10 @@
 		width: 65%;
 		border-radius: 1em;
 		overflow: clip;
-		@include f.neumorph-both-primary(7px);
+		@include f.neumorph-both-primary(f.$d);
 		.progress {
 		  height: 100%;
-		  @include f.neumorph-primary(f.$d);
+		  @include f.large-shadow-secondary;
 		  @include f.round;
 		}
 	  }

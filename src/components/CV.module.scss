@@ -1,0 +1,62 @@
+@use '../function' as f;
+
+.sinfo {
+  @include f.neumorph-inset-primary(calc(f.$d * 0.75));
+  border-radius: 0.5em;
+  width: clamp(45ch,75ch,100ch);
+  color: var(--secondary-color);
+  padding: 1em 0;
+  .row {
+	display: flex;
+	align-items: center;
+	padding: 0.5em 1em;
+	.key {
+	  width: 20%;
+	}
+	.delim {
+	  width: 5%;
+	}
+	.value {
+	  display: flex;
+	  align-items: center;
+	  span {
+		display: flex;
+		align-items: center;
+	  }
+	}
+	.goto {
+	  color: var(--secondary-color);
+	  padding: 0 0.2em;
+	}
+	.goto:hover {
+	  color: var(--primary-color);
+	  @include f.large-shadow-secondary;
+	}
+	.minfo {
+	  margin-left: 0.5em;
+	  .ic {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		@include f.round;
+		fill: var(--secondary-color);
+	  }
+	}
+	.minfo:hover {
+	  .ic {
+		fill: var(--primary-color);
+		@include f.large-shadow-secondary;
+	  }
+	}
+  }
+  .row:not(:last-child) {
+	border-bottom: dotted 0.1em var(--secondary-color);
+  }
+}
+
+.ic {
+  height: 1em;
+  fill: var(--secondary-color);
+  aspect-ratio: 1 / 1;
+  margin-left: 0.5em;
+}
