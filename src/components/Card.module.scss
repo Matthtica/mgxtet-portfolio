@@ -1,8 +1,7 @@
 @use '../function' as f;
 
 .card {
-  width: 35ch;
-  aspect-ratio: 2 / 1;
+  max-width: 35ch;
   @include f.neumorph-primary(f.$d);
   background-color: var(--primary-color);
   border-radius: 0.5em;
@@ -11,8 +10,8 @@
   align-items: center;
   overflow: clip;
   .bg {
-	width: 100%;
 	aspect-ratio: 1 / 1;
+	width: 100%;
 	position: relative;
 	img {
 	  position: absolute;
@@ -31,17 +30,18 @@
 	background-color: var(--primary-color);
 	position: relative;
 	.title {
-	  padding: 0.3em 0.6em;
-	  margin: 0;
-	  @include f.neumorph-primary(f.$d);
-	  @include f.round;
-	  font-weight: bold;
-	  color: var(--secondary-color);
 	  position: absolute;
+	  padding: 0.3em 0.6em;
+	  width: clamp(16ch, 16ch, 100%);
+	  margin: 0;
 	  left: 50%;
 	  transform: translate(-50%, -50%);
+	  @include f.neumorph-primary(f.$d);
+	  @include f.round;
+	  text-align: center;
+	  font-weight: bold;
+	  color: var(--secondary-color);
 	  cursor: default;
-	  overflow: auto;
 	}
 	.title:hover {
 	  @include f.large-shadow-secondary;
@@ -50,7 +50,6 @@
 	p {
 	  margin: 1.5em 0.6em 0.6em 0.6em;
 	  text-align: center;
-	  font-weight: bold;
 	  color: var(--secondary-color);
 	}
   }

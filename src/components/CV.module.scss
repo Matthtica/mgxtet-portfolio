@@ -1,15 +1,15 @@
 @use '../function' as f;
 
 .sinfo {
+  width: clamp(30em, 50em, 100%);
   @include f.neumorph-inset-primary(calc(f.$d * 0.75));
   border-radius: 0.5em;
-  width: clamp(45ch,75ch,100ch);
   color: var(--secondary-color);
-  padding: 1em 0;
+  padding: 0;
   .row {
 	display: flex;
 	align-items: center;
-	padding: 0.5em 1em;
+	margin: 1.5em 1em;
 	.key {
 	  width: 20%;
 	}
@@ -26,7 +26,6 @@
 	}
 	.goto {
 	  color: var(--secondary-color);
-	  padding: 0 0.2em;
 	}
 	.goto:hover {
 	  color: var(--primary-color);
