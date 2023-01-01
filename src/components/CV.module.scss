@@ -1,7 +1,7 @@
 @use '../function' as f;
 
 .sinfo {
-  width: clamp(20em, 50em, 100%);
+  width: clamp(20em, 50em, 95%);
   @include f.neumorph-inset-primary(calc(f.$d * 0.75));
   border-radius: 0.5em;
   color: var(--secondary-color);
@@ -9,7 +9,9 @@
   .row {
 	display: flex;
 	align-items: center;
-	margin: 1.5em 1em;
+	margin: 1em 1em;
+	border-bottom: solid 0.15em var(--secondary-color);
+	padding: 0.4em 0;
 	.key {
 	  width: 20%;
 	}
@@ -48,9 +50,6 @@
 	  }
 	}
   }
-  .row:not(:last-child) {
-	border-bottom: dotted 0.1em var(--secondary-color);
-  }
 }
 
 .ic {
@@ -60,8 +59,24 @@
   margin-left: 0.5em;
 }
 
-@media (orientation: portrait) {
+@media (max-width: 42em) {
   .row {
+	display: flex;
 	flex-direction: column;
+	gap: 0.3em;
+	padding: 0.4em 1em;
+	border-radius: 0.2em;
+	border: solid 0.15em var(--secondary-color);
+	.delim {
+	  display: none;
+	}
+	.key {
+	  width: 100%;
+	  font-weight: bold;
+	  text-align: center;
+	}
+	.value {
+	  padding: 0 0.5em;
+	}
   }
 }
