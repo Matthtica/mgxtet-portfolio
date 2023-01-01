@@ -37,7 +37,8 @@ interface NavProp {
 
 export default function Nav(prop: NavProp) {
     const [themeName, setThemeName] = useState("white");
-    const [showNMenu, setshowNMenu] = useState(false);
+    const [nmenu, setNMenu] = useState(false);
+    const [dmenu, setDMenu] = useState(false);
     const titles = ["home", "skills", "projects", "more"];
     const icons = [
         <svg className={style.icon} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -54,54 +55,26 @@ export default function Nav(prop: NavProp) {
         </svg>
     ];
 
-    const disableOverlay = () => {
-        $(`.${style.overlay}`).css({
-            "display": "none",
-        });
-    }
-
-    const enableOverlay = () => {
-        $(`.${style.overlay}`).css({
-            "display": "block",
-        });
-    }
-
-    const showThemeMenu = () => {
-        $(`.${style.dropdownMenu}`).css({
-            "display": "block",
-        });
-    }
-
-    const hideThemeMenu = () => {
-        $(`.${style.dropdownMenu}`).css({
-            "display": "none",
-        });
-    }
-
     const onClickNMenu = () => {
-        enableOverlay();
-        setshowNMenu(true);
+        setNMenu(true);
     }
 
     const onClickThemeMenu = () => {
-        showThemeMenu();
-        enableOverlay();
+        setDMenu(true);
     }
 
     const onThemeSelected = (name: string) => {
+        setDMenu(false);
         setThemeName(name);
-        disableOverlay();
-        hideThemeMenu();
     }
 
     const onClickOverLay = () => {
-        hideThemeMenu();
-        setshowNMenu(false);
-        disableOverlay();
+        setDMenu(false);
+        setNMenu(false);
     }
 
     const onClickMenuItem = (ind: number) => {
-        setshowNMenu(false);
+        setNMenu(false);
         prop.onNavigate(ind);
     }
 
@@ -114,13 +87,10 @@ export default function Nav(prop: NavProp) {
             "--secondary-darken-sha": colorLuminance(colors[themeName].secondary, diff * -1),
             "--secondary-lighten-sha": colorLuminance(colors[themeName].secondary, diff)
         });
-        $(`.${style.dropdownMenu}`).css({
-            "display": "none",
-        });
     }, [themeName]);
 
     return <nav className={style.navbar}>
-        <div className={style.overlay} onClick={onClickOverLay}>
+        <div className={(dmenu || nmenu) ? style.overlay : style.hiddenOverlay} onClick={onClickOverLay}>
         </div>
         <div className={style.bannerCont}>
             <svg width="400" height="600" className="banner" viewBox="0 0 400 600" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -135,7 +105,7 @@ export default function Nav(prop: NavProp) {
                     <path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z" />
                 </svg>
             </div>
-            <ul className={showNMenu ? style.nmenu : style.hiddenNMenu}>
+            <ul className={nmenu ? style.nmenu : style.hiddenNMenu}>
                 {titles.map((title: string, ind: number) =>
                     <li onClick={() => onClickMenuItem(ind)} className={style.nitem}>
                         {icons[ind]}
@@ -156,7 +126,7 @@ export default function Nav(prop: NavProp) {
         </ul>
         <div className={style.dropdown} onClick={onClickThemeMenu}>
             <div className={style.dropdownBtn}>{themeName}</div>
-            <ul className={style.dropdownMenu}>
+            <ul className={dmenu ? style.dropdownMenu : style.hiddenDMenu}>
                 {Object.keys(colors).map((name: string) => <li className={style.dropdownItem} onClick={() => onThemeSelected(name)}>{name}</li>)}
             </ul>
         </div>

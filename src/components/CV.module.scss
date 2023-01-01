@@ -1,7 +1,7 @@
 @use '../function' as f;
 
 .sinfo {
-  width: clamp(30em, 50em, 100%);
+  width: clamp(20em, 50em, 100%);
   @include f.neumorph-inset-primary(calc(f.$d * 0.75));
   border-radius: 0.5em;
   color: var(--secondary-color);
@@ -58,4 +58,10 @@
   fill: var(--secondary-color);
   aspect-ratio: 1 / 1;
   margin-left: 0.5em;
+}
+
+@media (orientation: portrait) {
+  .row {
+	flex-direction: column;
+  }
 }
