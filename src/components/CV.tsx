@@ -39,7 +39,7 @@ export default function ShortInfo(prop: ShortInfoProp) {
         "Role": "ReactJS developer",
         "Skills": <span>
             C/C++, Typescript, Sass, ReactJS, Svelte, Kotlin, Python
-            <a onClick={() => prop.goto(1)} className={style.minfo}>{infoic}</a>
+            <a href="#skill" onClick={() => prop.goto(1)} className={style.minfo}>{infoic}</a>
         </span>,
         "Hobby": <span>
             C++ <a href="#hobby" onClick={() => prop.goto(3)} className={style.minfo}>{infoic}</a>

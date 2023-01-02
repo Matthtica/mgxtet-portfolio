@@ -1,7 +1,7 @@
 import styles from './DescriptionBox.module.scss';
 
 interface DescriptionProp {
-    title: string,
+    title: any,
     description: JSX.Element
 }
 

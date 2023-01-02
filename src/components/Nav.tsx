@@ -20,7 +20,7 @@ const colors: Color = {
     "ired": { primary: "#dbdbdb", secondary: "#941c24" },
     "green": { primary: "#1c9428", secondary: "#7dff9d" },
     "purple": { primary: "#582aa3", secondary: "#dbdbdb" },
-    "pink": { primary: "#972aa3", secondary: "#e381bf" },
+    "pink": { primary: "#972aa3", secondary: "#ffffff" },
     "cyan": { primary: "#2a99a3", secondary: "#000000" },
     "yellow": { primary: "#d1c819", secondary: "#2e2e2e" }, //#a6981b
     "orange": { primary: "#c97516", secondary: "#e3b581" },
@@ -36,7 +36,7 @@ interface NavProp {
 }
 
 export default function Nav(prop: NavProp) {
-    const [themeName, setThemeName] = useState("white");
+    const [themeName, setThemeName] = useState("ired");
     const [nmenu, setNMenu] = useState(false);
     const [dmenu, setDMenu] = useState(false);
     const titles = ["home", "skills", "projects", "more"];
